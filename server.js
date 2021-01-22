@@ -2,6 +2,8 @@ const express=require('express');
 const app=express();
 const fs = require('fs');
 
+app.use(express.static('public'))
+
 app.get('/', (req, res)=>{
   try{
     fs.readFile('./index.html','utf8',(err,data)=>{
