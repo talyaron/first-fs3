@@ -1,1 +1,1 @@
-document.querySelector('h1').style.background = 'pink';
+document.querySelector('h1').style.background = 'yellow';
