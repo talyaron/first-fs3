@@ -5,20 +5,31 @@ const app = express();
 app.use(express.static('public'));
 
 const users = [
-  {name:'Kilani', id:'222222222'},
-  {name:'Yara', id:'333333333'},
-  {name:'Ihab', id:'444444'}
+  {name:'Kilani', password:'222222222'},
+  {name:'Yara', password:'333333333'},
+  {name:'Ihab', password:'444444'}
 ]
 
-//route
+//routes
 app.get('/get-users',(req, res)=>{
+ 
   res.send(users)
+})
+
+app.get('/get-password',(req, res)=>{
+  const {name} =req.query;
+
+  console.log(req.query);
+
+  let usr = users.find(user=>user.name === name);
+  console.log(usr)
+  res.send({password:usr.password})
 })
 
 
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 app.listen(port, function () {
   console.log('listening', port)
