@@ -26,6 +26,28 @@ function getPassword(name) {
     console.log('after fetch')
 }
 
+function handleSubmit(e) {
+    e.preventDefault();
+
+
+
+    let { name, password } = e.target.elements;
+
+    name = name.value;
+    password = password.value;
+    console.log(name, password);
+
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }, body: JSON.stringify({ name, password })
+    }).then(r => r.json())
+        .then(data => {
+            console.log(data)
+        })
+}
+
 function renderUsers(users) {
     const root = document.querySelector('#root');
     let html = '';
