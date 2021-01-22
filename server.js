@@ -28,14 +28,16 @@ app.get('/get-password', (req, res) => {
   res.send({ password: usr.password })
 })
 
-app.post('/login',(req, res)=>{
+app.post('/login', (req, res) => {
 
-  console.log(req.body) //get the data
-  const {name, password} = req.body;
+  const { name, password } = req.body;
+  const index = users.findIndex(user => user.name === name);
+  if (index === -1) {
 
-  users.push({name, password})
+    users.push({ name, password })
+  }
 
-  res.send({ok:true})
+  res.send({ ok: true })
 })
 
 
