@@ -3,7 +3,7 @@ const app = express();
 var bodyParser = require('body-parser')
 
 
-app.use(express.static('public'));
+app.use(express.static('React/build'));
 app.use(bodyParser.json())
 
 const users = [
@@ -15,7 +15,7 @@ const users = [
 //routes
 app.get('/get-users', (req, res) => {
 
-  res.send(users)
+  res.send(users);
 })
 
 app.get('/get-password', (req, res) => {
