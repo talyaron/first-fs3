@@ -3,13 +3,14 @@ const app = express();
 var bodyParser = require('body-parser')
 
 
-app.use(express.static('React/build'));
+app.use(express.static('client/build'));
 app.use(bodyParser.json())
 
 const users = [
   { name: 'Kilani', password: '222222222' },
   { name: 'Yara', password: '333333333' },
-  { name: 'Ihab', password: '444444' }
+  { name: 'Ihab', password: '444444' },
+  { name: 'Rema', password: '4534545' }
 ]
 
 //routes

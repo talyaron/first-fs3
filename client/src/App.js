@@ -14,13 +14,13 @@ function App() {
       .then(data => {
         console.log(data)
         setUsers(data);
-      })
+      });
   }, [])
 
   return (
     <div>
       {users.map((user, index) => {
-        return <p key={index}>{user.name}</p>
+        return <p className='names' key={index}>{user.name}</p>
       })}
 
     </div>
