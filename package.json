@@ -9,7 +9,7 @@
     "predeploy": "cd client && npm run build",
     "installAll": "npm i && cd client && npm i",
     "dev":"nodemon",
-    "deploy":"npm run predeploy && git add . && git commit -m \"Project has been deployed\" git push "
+    "deploy":"npm run predeploy && zsh git add . && zsh git commit -m \"Project has been deployed\" zsh git push"
   },
   "author": "",
   "license": "ISC",

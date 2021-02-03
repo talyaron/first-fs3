@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 
 
 app.use(express.static('client/build'));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 const users = [
   { name: 'Kilani', password: '222222222' },
